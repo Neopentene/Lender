@@ -1,0 +1,142 @@
+﻿<Page x:Class="Lender.pages.ProfilesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Lender.pages"
+      xmlns:ui="clr-namespace:Lender.UI"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Profiles Page"
+      DataContext="{Binding RelativeSource={RelativeSource Self}}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Name="AddProfileMessage" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+            <Label 
+                Style="{StaticResource FancyLabel}"
+                Foreground="{StaticResource MatteLightBlueOpague}"
+                Content="No Profiles Found"
+                FontSize="16"/>
+
+            <Label 
+                Style="{StaticResource FancyLabel}"
+                Foreground="{StaticResource MossGreen}"
+                Content="Create a Profile using the Button Below..."/>
+
+        </StackPanel>
+
+        <ScrollViewer 
+            Grid.Row="0" 
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            Grid.RowSpan="4" 
+            VerticalScrollBarVisibility="Hidden" 
+            HorizontalScrollBarVisibility="Disabled"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Margin="15 15 0 15">
+            <!-- TODO Make Custom Style for ScrollBar -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+                <ItemsControl Grid.Column="1" Grid.ColumnSpan="2" ItemsSource="{Binding Profiles}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border CornerRadius="8" Background="{StaticResource Eggplant}" VerticalAlignment="Center" Padding="10" Margin="10">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.4*"/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="0.6*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid Grid.RowSpan="2" Grid.ColumnSpan="2" VerticalAlignment="Center">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0.4*"/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label Grid.Row="0" Grid.Column="0" Content="Loan Id:" Style="{StaticResource FancyLabel}"
+                                               HorizontalContentAlignment="Left"/>
+
+                                        <Label Grid.Row="1" Grid.Column="0" Content="Name:" Style="{StaticResource FancyLabel}"
+                                               HorizontalContentAlignment="Left"/>
+
+                                        <Label Grid.Row="0" Grid.Column="1" Content="{Binding LoanId}" Style="{StaticResource FancyLabel}" 
+                                               Foreground="{StaticResource Khaki}" HorizontalContentAlignment="Left"/>
+
+                                        <Label Grid.Row="1" Grid.Column="1" Content="{Binding BorrowerName}" Style="{StaticResource FancyLabel}"
+                                               Foreground="{StaticResource MatteLightBlue}" HorizontalContentAlignment="Left"/>
+                                    </Grid>
+
+                                    <Button Grid.Row="1" Grid.Column="2"
+                                        Style="{StaticResource FancyButton}" 
+                                        ui:Properties.BackgroundPrimary="Red"
+                                        ui:Properties.BackgroundSecondary="Maroon"
+                                        ui:Properties.BackgroundAccent="Salmon"
+                                        Content="Delete"
+                                        Tag="{Binding LoanId}"
+                                        Margin="0 5 0 5"
+                                        HorizontalAlignment="Center"
+                                        Click="Delete_Click"/>
+
+                                    <Button Grid.Row="0" Grid.Column="2"
+                                        Style="{StaticResource FancyButton}" 
+                                        Content="Show"
+                                        Tag="{Binding LoanId}"
+                                        Margin="0 5 0 5"
+                                        HorizontalAlignment="Center"
+                                        Click="Show_Click"/>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Grid>
+
+        </ScrollViewer>
+
+        <Button 
+            Name="CreateNewProfileButton"
+            Grid.Row="3" 
+            Grid.Column="3" 
+            Style="{StaticResource FancyFabButton}" 
+            Content="+"
+            MinHeight="40" MinWidth="40"
+            FontSize="20"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="5"
+            Padding="5"
+            VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="CreateNewProfileButton_Click"/>
+    </Grid>
+</Page>

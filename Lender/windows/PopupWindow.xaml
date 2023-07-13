@@ -1,0 +1,85 @@
+﻿<Window x:Class="Lender.windows.PopupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lender.windows"
+        mc:Ignorable="d"
+        Name="PopupWindowParent"
+        Title="Popup" SizeToContent="WidthAndHeight"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="NoResize"
+        UseLayoutRounding="True">
+    <Border
+        Margin="5 5 5 7"
+        CornerRadius="10" 
+        BorderBrush="{StaticResource GhostWhite}"
+        BorderThickness="1.25"
+        Background="{StaticResource MatteBlack}"
+        UseLayoutRounding="True">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*" MaxHeight="60" MinHeight="40"/>
+                <RowDefinition Height="0.9*"/>
+            </Grid.RowDefinitions>
+
+            <!--#region Control Bar-->
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="84"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Column="0" Style="{StaticResource TitleBarLabel}" Content="Lender" Padding="50 0 30 0"/>
+
+                <StackPanel 
+                    Name="ControlBar" 
+                    Grid.Column="0" 
+                    Background="{StaticResource MatteBlack}" Opacity="0.01"
+                    Height="7" 
+                    Margin="4 0 0 0"
+                    VerticalAlignment="Top" 
+                    Cursor="ScrollAll" 
+                    MouseLeftButtonDown="ControlBar_MouseLeftButtonDown"
+                    MouseEnter="ControlBar_MouseEnter"/>
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top">
+                    <Button Name="MinimizeControlButton" Style="{StaticResource ControlButton}" Height="32" Width="32" Margin="4 4 4 0"
+                            Click="MinimizeButtonControl_Click">
+                        <Canvas Width="32" Height="32">
+                            <Path Data="M0,20 L32,20" Stroke="{Binding Foreground,ElementName=MinimizeControlButton}" StrokeThickness="3"/>
+                            <Canvas.RenderTransform>
+                                <ScaleTransform CenterX="16" CenterY="16" ScaleX="0.375" ScaleY="0.375"/>
+                            </Canvas.RenderTransform>
+                        </Canvas>
+                    </Button>
+                    <Button Name="CloseControlButton" Style="{StaticResource ControlButton}" Height="32" Width="32" Margin="6 4 2 0"
+                            Click="CloseButtonControl_Click">
+                        <Canvas Width="32" Height="32">
+                            <Path Data="M0,0 L32,32 M0,32 L32,0" Stroke="{Binding Foreground, ElementName=CloseControlButton}" StrokeThickness="3" />
+                            <Canvas.RenderTransform>
+                                <ScaleTransform CenterX="16" CenterY="16" ScaleX="0.375" ScaleY="0.375"/>
+                            </Canvas.RenderTransform>
+                        </Canvas>
+                    </Button>
+                </StackPanel>
+
+                <Border BorderBrush="Black" Grid.ColumnSpan="4" BorderThickness="0 0 0 1" Opacity="0.5">
+                    <Border.Effect>
+                        <BlurEffect Radius="2" KernelType="Gaussian"/>
+                    </Border.Effect>
+                </Border>
+            </Grid>
+            <!--#endregion Control Bar-->
+
+            <Frame Grid.Row="1" Name="ContentFrame" NavigationUIVisibility="Hidden">
+
+            </Frame>
+            
+        </Grid>
+    </Border>
+          
+</Window>

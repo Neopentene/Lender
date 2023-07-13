@@ -1,0 +1,116 @@
+﻿<Page x:Class="Lender.pages.CreateProfile"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Create Profile"
+      DataContext="{Binding RelativeSource={RelativeSource Self}}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" FontSize="28" Content="Create Profile" Style="{StaticResource FancyLabel}"/>
+
+        <Button 
+            Name="GoBack"
+            Grid.Row="0" 
+            Grid.Column="0" 
+            Style="{StaticResource FancyFabButton}" 
+            Height="38" Width="38"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Margin="5"
+            VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="GoBack_Click">
+            <Canvas Width="32" Height="32" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Path Data="M0,16 L13,5 M0,16 L13,27 M0,16 L32,16" Stroke="{Binding Foreground,ElementName=GoBack}" 
+                      StrokeEndLineCap="Round" StrokeStartLineCap="Round" StrokeThickness="4"/>
+                <Canvas.RenderTransform>
+                    <ScaleTransform CenterX="16" CenterY="16" ScaleX="0.4" ScaleY="0.4"/>
+                </Canvas.RenderTransform>
+            </Canvas>
+        </Button>
+
+        <ScrollViewer Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.6*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+                <Label Grid.Row="0" Content="Borrower Name:" Style="{StaticResource FancyLabel}" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Name="BorrowerName" Style="{StaticResource FancyTextBox}" TextChanged="BorrowerName_TextChanged"/>
+                <Label Grid.Row="1" Grid.Column="1" Name="BorrowerNameError" Style="{StaticResource FancyLabel}" Foreground="Red" FontSize="9" FontFamily="{StaticResource FiraCode}" Content=""/>
+
+                <Label Grid.Row="2" Content="Principal Amount:" Style="{StaticResource FancyLabel}" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Name="PrincipalAmount" Style="{StaticResource FancyTextBox}" TextChanged="PrincipalAmount_TextChanged"/>
+                <Label Grid.Row="3" Grid.Column="1" Name="PrincipalAmountError" Style="{StaticResource FancyLabel}" Foreground="Red" FontSize="9" FontFamily="{StaticResource FiraCode}" Content=""/>
+
+                <Label Grid.Row="4" Content="Interest Rate:" Style="{StaticResource FancyLabel}" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+                <TextBox Grid.Row="4" Grid.Column="1" Name="InterestRate" Style="{StaticResource FancyTextBox}" TextChanged="InterestRate_TextChanged"/>
+                <Label Grid.Row="5" Grid.Column="1" Name="InterestRateError" Style="{StaticResource FancyLabel}" Foreground="Red" FontSize="9" FontFamily="{StaticResource FiraCode}" Content=""/>
+
+                <Label Grid.Row="6" Content="Sanctioned Amount:" Style="{StaticResource FancyLabel}" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+                <TextBox Grid.Row="6" Grid.Column="1" Name="SanctionedAmount" Style="{StaticResource FancyTextBox}" TextChanged="SanctionedAmount_TextChanged"/>
+                <Label Grid.Row="7" Grid.Column="1" Name="SanctionedAmountError" Style="{StaticResource FancyLabel}" Foreground="Red" FontSize="9" FontFamily="{StaticResource FiraCode}" Content=""/>
+
+                <Label Grid.Row="8" Content="Loan Start Date:" Style="{StaticResource FancyLabel}" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+                <DatePicker Grid.Row="8" Grid.Column="1" Name="StartDate" Style="{StaticResource FancyDatePicker}" SelectedDateChanged="StartDate_SelectedDateChanged"/>
+                <Label Grid.Row="9" Grid.Column="1" Name="StartDateError" Style="{StaticResource FancyLabel}" Foreground="Red" FontSize="9" FontFamily="{StaticResource FiraCode}" Content=""/>
+                
+                <Label Grid.Row="10" Content="Time Period:" Style="{StaticResource FancyLabel}" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+                <TextBox Grid.Row="10" Grid.Column="1" Name="TimePeriod" Style="{StaticResource FancyTextBox}" TextChanged="TimePeriod_TextChanged"/>
+                <Label Grid.Row="11" Grid.Column="1" Name="TimePeriodError" Style="{StaticResource FancyLabel}" Foreground="Red" FontSize="9" FontFamily="{StaticResource FiraCode}" Content=""/>
+            </Grid>
+        </ScrollViewer>
+
+        <StackPanel 
+            Grid.Row="3" 
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+            
+            <Button 
+                Name="CreateButton"
+                Style="{StaticResource FancyButton}" 
+                Margin="5"
+                Padding="8"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Content="Create" Click="CreateButton_Click"/>
+
+            <Label Name="CreateProfileError" Style="{StaticResource FancyLabel}" Foreground="Red" FontSize="9" FontFamily="{StaticResource FiraCode}" Content=""/>
+        </StackPanel>
+
+    </Grid>
+</Page>

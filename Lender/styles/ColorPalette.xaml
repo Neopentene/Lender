@@ -1,0 +1,38 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Color Palette 1 -->
+    <!-- Chocolate Cosmos: #3D0814 -->
+    <!-- Mindaro: #E7F9A9 -->
+    <!-- Khaki: #C6B38E -->
+    <!-- Moss Green: #9A9B73 -->
+    <!-- Eggplant: #442F38 -->
+
+    <!-- Color Palette 2 -->
+    <!-- Matte Black: #28282B -->
+    <!-- Charcoal: #2F4550 -->
+    <!-- Payne's Gray: #586F7C -->
+    <!-- Light Blue: #B8DBD9 -->
+    <!-- Ghost White: #F4F4F9 -->
+    
+    <!-- Color Palette 1 -->
+    <SolidColorBrush x:Key="MatteBlack" Color="#28282B"/>
+    <SolidColorBrush x:Key="Nobel" Color="#B0A4A4"/>
+    <SolidColorBrush x:Key="AeroBlue" Color="#D3FBD8"/>
+    <SolidColorBrush x:Key="Charcoal" Color="#2F4550"/>
+    <SolidColorBrush x:Key="PayneGray" Color="#586F7C"/>
+    <SolidColorBrush x:Key="MatteLightBlue" Color="#B8DBD9"/>
+    <SolidColorBrush x:Key="MatteLightBlueOpague" Color="#ABB8DBD9"/>
+    <SolidColorBrush x:Key="GhostWhite" Color="#F4F4F9"/>
+    <SolidColorBrush x:Key="GhostWhiteOpague" Color="#AAF4F4F9"/>
+
+
+
+    <!-- Color Palette 2 -->
+    <SolidColorBrush x:Key="ChocolateCosmos" Color="#3D0814"/>
+    <SolidColorBrush x:Key="Mindaro" Color="#E7F9A9"/>
+    <SolidColorBrush x:Key="Khaki" Color="#9A9B73"/>
+    <SolidColorBrush x:Key="MossGreen" Color="#9A9B73"/>
+    <SolidColorBrush x:Key="Eggplant" Color="#442F38"/>
+    <SolidColorBrush x:Key="Celtic" Color="#2F443B"/>
+</ResourceDictionary>

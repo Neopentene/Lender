@@ -1,0 +1,22 @@
+﻿<Application x:Class="Lender.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Lender"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/styles/Fonts.xaml"/>
+                <ResourceDictionary Source="/styles/ColorPalette.xaml"/>
+                <ResourceDictionary Source="/styles/TitleBarStyles.xaml"/>
+                <ResourceDictionary Source="/styles/LabelStyles.xaml"/>
+                <ResourceDictionary Source="/styles/TextBlockStyles.xaml"/>
+                <ResourceDictionary Source="/styles/TextBoxStyles.xaml"/>
+                <ResourceDictionary Source="/styles/ButtonStyles.xaml"/>
+                <ResourceDictionary Source="/styles/ComboBoxStyles.xaml"/>
+                <ResourceDictionary Source="/styles/DatePickerStyles.xaml"/>
+                <ResourceDictionary Source="/styles/TabStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

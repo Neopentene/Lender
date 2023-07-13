@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lender", "Lender\Lender.csproj", "{DB0AA926-4640-4811-94BA-5E7E037624FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB0AA926-4640-4811-94BA-5E7E037624FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB0AA926-4640-4811-94BA-5E7E037624FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB0AA926-4640-4811-94BA-5E7E037624FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB0AA926-4640-4811-94BA-5E7E037624FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EA2B3D99-72FC-451E-80AF-DED991053568}
+	EndGlobalSection
+EndGlobal

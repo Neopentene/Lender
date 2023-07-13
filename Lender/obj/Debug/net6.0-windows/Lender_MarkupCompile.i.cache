@@ -1,0 +1,20 @@
+﻿Lender
+1.0.0.0
+
+winexe
+C#
+.cs
+D:\Desktop Folders\Programs\WPF\Lender\Lender\obj\Debug\net6.0-windows\
+Lender
+none
+false
+TRACE;DEBUG;NET;NET6_0;NETCOREAPP
+D:\Desktop Folders\Programs\WPF\Lender\Lender\App.xaml
+161746545954
+3929033999
+18-2001044089
+1941675070116
+MainWindow.xaml;pages\AddPaymentPage.xaml;pages\CreateProfilePage.xaml;pages\ProfileDetailsPage.xaml;pages\ProfilesPage.xaml;styles\ButtonStyles.xaml;styles\ColorPalette.xaml;styles\ComboBoxStyles.xaml;styles\DatePickerStyles.xaml;styles\Fonts.xaml;styles\LabelStyles.xaml;styles\TabStyles.xaml;styles\TextBlockStyles.xaml;styles\TextBoxStyles.xaml;styles\TitleBarStyles.xaml;windows\PopupWindow.xaml;
+
+False
+
